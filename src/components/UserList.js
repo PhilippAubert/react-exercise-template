@@ -15,8 +15,8 @@ function UserList() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setResults(data);
-        console.log(data);
+        setResults(data.results);
+        console.log(data.results);
       });
   }, []);
 
@@ -28,14 +28,14 @@ function UserList() {
         firstName={result.name.first}
         lastName={result.name.last}
         gender={result.gender}
-        picture={result.picture.medium}
+        picture={result.picture.large}
       />
     ));
 
     return postComponents;
   }
 
-  return <div> {renderPosts}</div>;
+  return <div> {renderPosts()}</div>; // <= goddamn!!!!!!!!!!!!!!!!!!!! *Black Metal Screams from my window*
 }
 
 export default UserList;

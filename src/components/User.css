@@ -1,4 +1,7 @@
 .Post {
   margin: 0 auto;
   padding: 20%;
+  width: 100%;
+  height: 1000px;
+  background-color: grey;
 }

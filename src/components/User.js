@@ -2,7 +2,7 @@ import "./User.css";
 
 function User({ picture, title, firstName, lastName, gender }) {
   return (
-    <section className="Post">
+    <section>
       <h3>{title}</h3>
       <h2>{firstName}</h2>
       <h2>{lastName}</h2>
