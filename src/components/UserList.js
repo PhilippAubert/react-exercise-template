@@ -1,37 +1,41 @@
-import { User } from "./User.js";
+import User from "./User.js";
 import { useEffect } from "react";
 import { useState } from "react";
+import "./UserList.css";
 
-function UserList(name, picture, gender, User) {
-  const [posts, setPosts] = useState([]);
+function UserList() {
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
-    console.log("first render");
-
-    const url =
+    const baseUrl =
       "https://randomuser.me/api/?inc=email,gender,name,picture&results=10";
+
+    let url = baseUrl;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setPosts(data);
+        setResults(data);
+        console.log(data);
       });
   }, []);
 
   function renderPosts() {
-    const postComponents = posts.map((result) => (
+    const postComponents = results.map((result) => (
       <User
+        key={result.email}
         title={result.name.title}
         firstName={result.name.first}
         lastName={result.name.last}
-        key={result.email}
+        gender={result.gender}
+        picture={result.picture.medium}
       />
     ));
 
     return postComponents;
   }
 
-  return <article className="">{renderPosts}</article>;
+  return <div> {renderPosts}</div>;
 }
 
 export default UserList;
