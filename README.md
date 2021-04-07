@@ -60,9 +60,9 @@ For that, you already have prepared 2 files under the `components/` folder.
   - It must be a stateful component
   - On first render, it should get the data coming from the API and store it
     in its state. Make it use an effect, where you use the `fetch` function to get the data from the API.
-  - It should render the list of users using the `User` componen you defined before.
+  - It should render the list of users using the `User` component you defined before.
 
-## Step 2
+## Step 2  
 
 Change the `UserList` component so it allows you to:
 
@@ -85,3 +85,5 @@ https://randomuser.me/documentation#results
 - Start with a static app. Create the components first, all of them dumb. Use them and look how they would look like. After you are done with that, start making it dynamic.
 - All the users have a unique email. That's a great candidate for the `key` when you generate the `Users` dynamically with `map`.
 - Don't worry much about styling. The goal of this exercise is not to make the most beautiful app, but to learn how to use the `useEffect` hook for a real world scenario: getting data from an external API.
+
+
